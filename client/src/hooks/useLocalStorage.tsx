@@ -6,6 +6,7 @@ type UseLocalStorageReturnType<T> = [T | undefined, (value: T) => void, () => vo
 function useLocalStorage<T>(key: string, initialValue?: T): UseLocalStorageReturnType<T> {
 
   const [storedValue, setStoredValue] = useState<T | undefined>(() => {
+    
     try {
       const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
