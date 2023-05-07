@@ -1,1 +1,27 @@
-/*# sourceMappingURL=Header.css.map */
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav__lang {
+  display: flex;
+}
+header nav__lang button {
+  margin-right: 1rem;
+}
+header nav__lang button--active {
+  font-weight: bold;
+}
+header nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header nav__list li {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+header nav__list li--active {
+  font-weight: bold;
+}/*# sourceMappingURL=Header.css.map */

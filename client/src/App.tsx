@@ -11,7 +11,7 @@ import { Favoritos } from "./Routes/Favoritos/Favoritos";
 import { Home } from "./Routes/Home/Home";
 import { Ajustes } from "./Routes/Ajustes/Ajustes";
 import { Header } from "./components/Header/Header";
-import { FaBeer } from "react-icons/fa";
+import { FiHome, FiHeart, FiSettings } from "react-icons/fi";
 
 const HomeSection = () => <Home />;
 const FavoritosSection = () => <Favoritos />;
@@ -24,9 +24,9 @@ const App = () => {
 
   const sections = useMemo(
     () => [
-      { component: HomeSection, label: <FaBeer /> },
-      { component: FavoritosSection, label: "Favoritos" },
-      { component: AjustesSection, label: "Ajustes" },
+      { component: HomeSection, label: <FiHome /> },
+      { component: FavoritosSection, label: <FiHeart /> },
+      { component: AjustesSection, label: <FiSettings /> },
     ],
     []
   );
@@ -53,8 +53,7 @@ const App = () => {
             classNames="slide"
             timeout={500}
           >
-            <Routes             
->
+            <Routes>
               {sections.map((section, index) => (
                 <Route
                   key={index}

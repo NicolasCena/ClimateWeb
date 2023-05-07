@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 interface WeatherCardProps {
   city?: string;
   icon?: string;
@@ -22,8 +24,12 @@ export const Tarjeta: React.FC<WeatherCardProps> = ({
   tempMax,
   humidity,
 }) => {
+
+  const { t } = useTranslation();
+
   return (
     <div className="weather-card">
+      <h1>{t("greeting")}</h1>
       <h2>{city}</h2>
       <p>{description}</p>
       <div className="temperature-info">

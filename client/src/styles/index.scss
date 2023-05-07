@@ -1,8 +1,9 @@
+@import "./mixins.scss";
+@import "./constants.scss";
 @import "../components/Header/Header.scss";
 @import "../components/Tarjeta/Tarjeta.scss";
 @import "../components/Principal/Principal.scss";
-@import "./mixins.scss";
-@import "./constants.scss";
+
 
 * {
   padding: 0;

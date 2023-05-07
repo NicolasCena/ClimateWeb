@@ -1,0 +1,76 @@
+header {
+    background-color: $secondary-color;
+
+  .header__nav {
+    @include flex($justify-content: space-around);
+
+    .header__lang {
+      @include flex;
+
+      button {
+        margin-right: 1rem;
+        outline: none;
+        background-color: transparent;
+        border: none;
+
+        img {
+          width: 1.5rem;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    h3 {
+        color: $color-white;
+    }
+
+    .header__list {
+      @include flex;
+      gap: 10px;
+
+      li {
+        cursor: pointer;
+        @include flex;
+        width: 40px;
+        height: 40px;
+        color: $color-white;
+
+        &--active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  header {
+    .header__nav {
+      @include grid-areas("'title title' 'lenguages sections'", $columns: 2, $gutter: 5px);
+      
+      .header__lang {
+        grid-area: sections;
+        @include flex;
+
+        button {
+            @include flex;
+            margin: 0 15px;
+
+            img {
+                @include flex;
+
+            }
+        }
+      }
+
+      h3 {
+        @include flex;
+        grid-area: title;
+      }
+
+      .header__list {
+        grid-area: lenguages;
+      }
+    }
+  }
+}

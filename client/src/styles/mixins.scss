@@ -29,9 +29,9 @@
   
 // Mixin de grid con áreas
 // Este mixin te permite definir áreas dentro de la cuadrícula. 
-@mixin grid-areas($areas, $gutter: 30px) {
+@mixin grid-areas($areas, $gutter: 30px, $columns: 1) {
     display: grid;
-    grid-template-columns: repeat(length(nth($areas, 1)), 1fr);
+    grid-template-columns: repeat($columns, 1fr);
     grid-gap: $gutter;
     grid-template-areas: #{$areas};
 }
