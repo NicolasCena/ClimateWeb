@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
+
+// Colores
+$color-success: #28a745;
+$color-danger: #dc3545;
+$color-warning: #ffc107;
+$color-info: #17a2b8;
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+// Colores primarios
+$primary-color: #FFC947; // Amarillo cálido
+$secondary-color: #4A4E4D; // Gris oscuro
+$accent-color: #47A8FF; // Azul claro
+
+// Colores de fondo
+$body-bg-color: #F7F8F8; // Gris claro
+$card-bg-color: #FFFFFF; // Blanco
+
+// Colores de texto
+$text-color: #4A4E4D; // Gris oscuro
+$light-text-color: #8B8C8C; // Gris claro
+
+// Variables de tamaño
+$padding-sm: 10px;
+$padding-md: 20px;
+$padding-lg: 30px;
+$margin-sm: 10px;
+$margin-md: 20px;
+$margin-lg: 30px;
+
+// Tamaños de media query
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$border-radius: 4px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$fontRegular: 'Open Sans', sans-serif;
+$fontBold: 'Open Sans Bold', sans-serif;
+
