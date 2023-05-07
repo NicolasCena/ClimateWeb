@@ -1,0 +1,38 @@
+@mixin flex($display: flex, $justify-content: center, $align-items: center) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+// Mixin de grid básico
+// Este mixin permite definir una cuadrícula básica
+@mixin grid($cols, $gap) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-gap: $gap;
+}
+
+// Mixin de grid con ancho variable
+// Este mixin te permite especificar el ancho de las columnas de la cuadrícula en lugar del número de columnas. 
+@mixin grid-var($sizes, $gutter: 30px) {
+    display: grid;
+    grid-template-columns: repeat(length($sizes), minmax(0, 1fr));
+    grid-gap: $gutter;
+    > * {
+        @for $i from 1 through length($sizes) {
+        &:nth-child(#{$i}) {
+            grid-column: span #{nth($sizes, $i)};
+        }
+        }
+    }
+}
+  
+// Mixin de grid con áreas
+// Este mixin te permite definir áreas dentro de la cuadrícula. 
+@mixin grid-areas($areas, $gutter: 30px) {
+    display: grid;
+    grid-template-columns: repeat(length(nth($areas, 1)), 1fr);
+    grid-gap: $gutter;
+    grid-template-areas: #{$areas};
+}
+  

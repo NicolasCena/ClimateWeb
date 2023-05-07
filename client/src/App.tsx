@@ -12,7 +12,6 @@ import { Home } from "./Routes/Home/Home";
 import { Ajustes } from "./Routes/Ajustes/Ajustes";
 import { Header } from "./components/Header/Header";
 import { FaBeer } from "react-icons/fa";
-import "./index.scss";
 
 const HomeSection = () => <Home />;
 const FavoritosSection = () => <Favoritos />;
