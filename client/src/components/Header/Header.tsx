@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import reinoUnido from '../../assets/icons/reinoUnido.png'
-import spain from '../../assets/icons/spain.png'
+import reinoUnido from "../../assets/icons/reinoUnido.png";
+import spain from "../../assets/icons/spain.png";
 
 interface HeaderProps {
   sections: { component: React.FC; label: React.ReactNode }[];
@@ -24,11 +24,11 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="header">
       <nav className="header__nav">
         <div className="header__lang">
-          <button onClick={() => changeLanguage('en')} type="button">
-            <img src={reinoUnido} alt='english' /> 
+          <button onClick={() => changeLanguage("en")} type="button">
+            <img src={reinoUnido} alt="english" />
           </button>
-          <button onClick={() => changeLanguage('es')} type="button">
-            <img src={spain} alt='spanish'  /> 
+          <button onClick={() => changeLanguage("es")} type="button">
+            <img src={spain} alt="spanish" />
           </button>
         </div>
         <h3>Climate Web</h3>

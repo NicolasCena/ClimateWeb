@@ -1,32 +1,83 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
-header nav {
+header {
+  background-color: #4A4E4D;
+}
+header .header__nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .header__nav .header__lang {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header nav__lang {
-  display: flex;
-}
-header nav__lang button {
+header .header__nav .header__lang button {
   margin-right: 1rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
 }
-header nav__lang button--active {
-  font-weight: bold;
+header .header__nav .header__lang button img {
+  width: 1.5rem;
+  border-radius: 4px;
 }
-header nav__list {
+header .header__nav h3 {
+  color: #FFFFFF;
+}
+header .header__nav .header__list {
   display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-header nav__list li {
-  margin-left: 1rem;
+header .header__nav .header__list li {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: #FFFFFF;
 }
-header nav__list li--active {
+header .header__nav .header__list li--active {
   font-weight: bold;
 }
 
+@media screen and (max-width: 576px) {
+  header .header__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    grid-template-areas: 'title title' 'lenguages sections';
+  }
+  header .header__nav .header__lang {
+    grid-area: sections;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .header__nav .header__lang button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+  }
+  header .header__nav .header__lang button img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .header__nav h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: title;
+  }
+  header .header__nav .header__list {
+    grid-area: lenguages;
+  }
+}
 .weather-card {
   display: flex;
   flex-direction: column;
@@ -87,6 +138,21 @@ header nav__list li--active {
   font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
+}
+
+.clouds {
+  background-image: url("../../assets/images/nublado.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.sun {
+  background-image: url("../../assets/images/soleado.jpg");
+  width: 100%;
+  height: 100%;
 }
 
 * {
