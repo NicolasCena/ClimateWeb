@@ -1,51 +1,61 @@
-import { useState } from 'react';
-import { Route, Routes, BrowserRouter, useNavigate, useLocation } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import './index.scss';
+import { useState, useCallback, useMemo} from "react";
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { Favoritos } from "./Routes/Favoritos/Favoritos";
+import { Home } from "./Routes/Home/Home";
+import { Ajustes } from "./Routes/Ajustes/Ajustes";
+import { Header } from "./components/Header/Header";
+import { FaBeer } from "react-icons/fa";
+import "./index.scss";
 
-const Section1 = () => <div className="section">Sección 1</div>;
-const Section2 = () => <div className="section">Sección 2</div>;
-const Section3 = () => <div className="section">Sección 3</div>;
+const HomeSection = () => <Home />;
+const FavoritosSection = () => <Favoritos />;
+const AjustesSection = () => <Ajustes />;
 
 const App = () => {
   const history = useNavigate();
   const location = useLocation();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const sections = [
-    { component: Section1, label: 'Sección 1' },
-    { component: Section2, label: 'Sección 2' },
-    { component: Section3, label: 'Sección 3' },
-  ];
+  const sections = useMemo(
+    () => [
+      { component: HomeSection, label: <FaBeer /> },
+      { component: FavoritosSection, label: "Favoritos" },
+      { component: AjustesSection, label: "Ajustes" },
+    ],
+    []
+  );
 
-  const handleSectionClick = (index: any) => {
-    setActiveIndex(index);
-    history(`/${index}`);
-  };
+  const handleSectionClick = useCallback(
+    (index: any) => {
+      setActiveIndex(index);
+      history(`/${index}`);
+    },
+    [history, setActiveIndex]
+  );
 
   return (
     <div className="container">
-      <div className="navbar">
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className={`navbar-item ${
-              activeIndex === index ? 'active' : ''
-            }`}
-            onClick={() => handleSectionClick(index)}
-          >
-            {section.label}
-          </div>
-        ))}
-      </div>
+      <Header
+        sections={sections}
+        handleSectionClick={handleSectionClick}
+        activeIndex={activeIndex}
+      />
       <div className="content">
         <TransitionGroup>
           <CSSTransition
-            key={location.key}
+            key={location.pathname}
             classNames="slide"
             timeout={500}
           >
-            <Routes>
+            <Routes             
+>
               {sections.map((section, index) => (
                 <Route
                   key={index}
@@ -53,7 +63,6 @@ const App = () => {
                   element={<section.component />}
                 />
               ))}
-              <Route path="/" element={<Section1 />} />
             </Routes>
           </CSSTransition>
         </TransitionGroup>

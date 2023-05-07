@@ -4,7 +4,9 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
-
+    "paths": {
+      "feather-icons-react": ["../node_modules/feather-icons-react/dist/feather-icons-react.d.ts"]
+    },
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
