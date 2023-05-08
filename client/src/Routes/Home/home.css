@@ -1,4 +1,9 @@
-.imagen {
+.box-image-data {
+  position: relative;
   width: 100%;
-  height: 400px;
+  height: 700px;
+}
+.box-image-data .imagen {
+  width: 100%;
+  height: 700px;
 }/*# sourceMappingURL=home.css.map */

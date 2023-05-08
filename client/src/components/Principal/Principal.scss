@@ -1,0 +1,68 @@
+.weather-card {
+  @include flex($justify-content: space-between);
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(216, 216, 216, 0.15);
+  background-color: #ffffff9f;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 94px;
+  left: calc(50% - 143px);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .temperature-info {
+    @include flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .temperature {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .feels-like {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+
+  .temp-range-info {
+    @include flex($justify-content: space-between);
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .temp-min,
+    .temp-max {
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+
+  .humidity-info {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+  }
+}

@@ -140,19 +140,80 @@ header .header__nav .header__list li--active {
   text-align: center;
 }
 
-.clouds {
-  background-image: url("../../assets/images/nublado.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+.weather-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(216, 216, 216, 0.15);
+  background-color: rgba(255, 255, 255, 0.6235294118);
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 94px;
+  left: calc(50% - 143px);
+}
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.weather-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.weather-card p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.weather-card .temperature-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.weather-card .temperature-info .temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.weather-card .temperature-info .feels-like {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+.weather-card .temp-range-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.weather-card .temp-range-info .temp-min,
+.weather-card .temp-range-info .temp-max {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+.weather-card .humidity-info {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
 }
 
-.sun {
-  background-image: url("../../assets/images/soleado.jpg");
+.box-image-data {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 700px;
+}
+.box-image-data .imagen {
+  width: 100%;
+  height: 700px;
 }
 
 * {
